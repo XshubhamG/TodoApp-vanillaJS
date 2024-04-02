@@ -60,11 +60,23 @@ function addTodo() {
     todoInput.value = ""
 }
 
+/**
+ * Deletes a todo item from the todos array based on the provided id.
+ *
+ * @param {number} id - The id of the todo item to be deleted.
+ * @return {undefined} This function does not return a value.
+ */
 function deleteTodo(id) {
     todos = todos.filter((todo) => todo.id !== id)
     Todo.saveTodo()
 }
 
+/**
+ * Toggles the completion status of a todo item with the given ID.
+ *
+ * @param {number} id - The ID of the todo item to toggle.
+ * @return {void} This function does not return a value.
+ */
 function toggleTodo(id) {
     todos = todos.map((todo) => {
         if (todo.id === id) {
@@ -75,6 +87,12 @@ function toggleTodo(id) {
     Todo.saveTodo()
 }
 
+/**
+ * Edits a todo item with the given ID.
+ *
+ * @param {number} id - The ID of the todo item to edit.
+ * @return {undefined} This function does not return a value.
+ */
 function editTodo(id) {
     todos = todos.map((todo) => {
         if (todo.id === id) {
@@ -86,6 +104,13 @@ function editTodo(id) {
     Todo.saveTodo()
 }
 
+/**
+ * Renders the todos on the page based on the current list of todos.
+ * If there are todos, it clears the todos container and displays them.
+ * If there are no todos, it hides the todos container and displays a "no todos" message.
+ *
+ * @return {void} This function does not return anything.
+ */
 function renderTodos() {
     if (todos.length > 0) {
         todosContainer.innerHTML = ''
