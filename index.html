@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="bg-gray-200 dark:bg-gray-900">
+    <main class="container mx-auto">
+      <div class="h-screen">
+        <form id="todo-form" class="flex items-center justify-center gap-5 p-6">
+          <input
+            type="text"
+            name="todoInput"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="What needs to be done?"
+            required
+          />
+          <button
+            name="submitBtn"
+            type="submit"
+            class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-xl px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800"
+          >
+            Add
+          </button>
+        </form>
+
+        <div id="noTodos">
+          <div class="flex flex-col items-center justify-center p-6">
+            <dotlottie-player
+              src="https://lottie.host/86096278-4b8f-465c-ae5e-baa0c1d833bb/MFVxWXS9Vt.json"
+              background="transparent"
+              speed="1"
+              style="width: 400px; height: 400px"
+              autoplay
+            ></dotlottie-player>
+            <h2
+              class="text-3xl text-gray-700 font-bold animate__animated animate__rubberBand"
+            >
+              No todos
+            </h2>
+          </div>
+        </div>
+
+        <div id="todos" class="flex flex-col-reverse gap-4 p-6 w-full"></div>
+      </div>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
